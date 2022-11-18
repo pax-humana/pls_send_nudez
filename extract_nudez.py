@@ -24,16 +24,6 @@ INPUT_DIR = os.path.abspath(args.directory)
 OUTPUT_DIR = os.path.abspath(os.path.join(INPUT_DIR, args.output))
 EXCLUDE = set([args.output])
 
-def resize_image(data, sz=(256, 256)):
-    im = Image.open(BytesIO(data))
-    if im.mode != "RGB":
-        im = im.convert('RGB')
-    imr = im.resize(sz, resample=Image.BILINEAR)
-    fh_im = BytesIO()
-    imr.save(fh_im, format='JPEG')
-    fh_im.seek(0)
-    return fh_im
-
 def preprocess_and_compute(pimg, model):
     image = opennsfw2.preprocess_image(Image.open(BytesIO(pimg)), opennsfw2.Preprocessing.YAHOO)
     inputs = numpy.expand_dims(image, axis=0)
