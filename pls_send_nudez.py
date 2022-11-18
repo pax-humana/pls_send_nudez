@@ -69,6 +69,7 @@ def main():
         os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Find images and apply the model
+    print("Starting the scraper")
     while True:
         # Get a random image
         image_data = None
