@@ -25,6 +25,12 @@ Updated for Tensorflow2 and OpenNSFW2
 - `pip install --upgrade pip`
 - `pip install tensorflow`
 
+## Install other requirements
+
+Ensure the correct conda environment is activated and run
+
+- `pip -r requirements.txt`
+
 ## Running
 
 Activate the conda environment you created above
