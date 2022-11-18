@@ -34,8 +34,10 @@ def main():
         os.makedirs(OUTPUT_DIR)
 
     # Pre-load Tensorflow OpenNSFW2 model
+    print("Loading OpenNSFW2 model")
     model = opennsfw2.make_open_nsfw_model()
 
+    print("Recursively scanning directory " + INPUT_DIR)
     for fulldir, subdir, files in os.walk(INPUT_DIR):
         subdir[:] = [d for d in subdir if d not in EXCLUDE] # Exclude the output directory
         for filename in files:
@@ -50,7 +52,7 @@ def main():
                     os.rename(os.path.join(fulldir, filename), os.path.join(OUTPUT_DIR, filename))
             
             else:
-                print(os.path.join(INPUT_DIR, filename), "is not a supported image.")
+                print(os.path.join(fulldir, filename), "is not a supported image.")
 
 if __name__ == '__main__':
     main()

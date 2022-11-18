@@ -61,6 +61,7 @@ def preprocess_and_compute(pimg, model):
 # Main
 def main():
     # Pre-load Tensorflow OpenNSFW2 model
+    print("Loading OpenNSFW2 model")
     model = opennsfw2.make_open_nsfw_model()
 
     # Create output directory
