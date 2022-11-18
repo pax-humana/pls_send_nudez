@@ -5,31 +5,31 @@ Updated for Tensorflow2 and OpenNSFW2
 ## [Install and configure Tensorflow](https://www.tensorflow.org/install/pip#ubuntu_1804_cuda_101)
 
 ### Install Miniconda
-`curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh`
-`bash Miniconda3-latest-Linux-x86_64.sh`
+- `curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh`
+- `bash Miniconda3-latest-Linux-x86_64.sh`
 
 ### Create a conda environment
 
-`conda create --name opennsfw2 python=3.9`
-`conda activate opennsfw2`
+- `conda create --name opennsfw2 python=3.9`
+- `conda activate opennsfw2`
 
 ### GPU Setup
 
-`conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0`
-`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/`
-`mkdir -p $CONDA_PREFIX/etc/conda/activate.d`
-`echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh`
+- `conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0`
+- `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/`
+- `mkdir -p $CONDA_PREFIX/etc/conda/activate.d`
+- `echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh`
 
 ### Install TensorFlow
 
-`pip install --upgrade pip`
-`pip install tensorflow`
+- `pip install --upgrade pip`
+- `pip install tensorflow`
 
 ## Running
 
 Activate the conda environment you created above
 
-`conda activate opennsfw2`
+- `conda activate opennsfw2`
 
 ```
 usage: pls_send_nudez.py [-h] [-s MIN_SIZE] [-7] output
