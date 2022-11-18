@@ -29,7 +29,7 @@ Updated for Tensorflow2 and OpenNSFW2
 
 Ensure the correct conda environment is activated and run
 
-- `pip -r requirements.txt`
+- `pip install -r requirements.txt`
 
 ## Running
 
