@@ -135,7 +135,7 @@ def main():
                 image_data = get_image(image_name)
                 checkpoint_counter = checkpoint_counter + 1
                 if checkpoint_counter == 62:
-                    print(image_name)
+                    print("Checkpoint: " + image_name)
                     checkpoint_counter = 0
             image_path = os.path.join(os.sep, OUTPUT_DIR, image_name)
 
