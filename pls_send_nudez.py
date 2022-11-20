@@ -122,7 +122,7 @@ def main():
         
         if args.restore_point is not None:
             if len(args.restore_point) != IMGUR_URL_HASH_LENGTH:
-                print("Restore point length is not " + IMGUR_URL_HASH_LENGTH)
+                print("Restore point length is not " + str(IMGUR_URL_HASH_LENGTH))
                 sys.exit(1)
             iterator = itertools.islice(iterator,get_restore_point(args.restore_point),None)
 
