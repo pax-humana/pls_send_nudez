@@ -61,7 +61,14 @@ def get_restore_point(checkpoint):
 
 def get_image(image_name):
     image_url = IMGUR_URL_PREFIX + image_name
-    req = requests.get(image_url)
+    while True:
+        try:
+            req = requests.get(image_url)
+            break()
+        except:
+            print("Error fetching " + image_name + ": Sleeping for an hour")
+            time.sleep(360)
+
     image_data = req.content
     if 'd835884373f4d6c8f24742ceabe74946' == hashlib.md5(image_data).hexdigest() or sys.getsizeof(image_data) < IMAGE_SIZE_MIN:
         return None
@@ -129,7 +136,7 @@ def main():
         while True:
             # Get the next image
             image_data = None
-            checkpoint_counter = 0
+            checkpoint_counter = -1
             while image_data is None:
                 image_name = ''.join(next(iterator))     
                 image_data = get_image(image_name)
