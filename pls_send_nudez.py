@@ -64,7 +64,7 @@ def get_image(image_name):
     while True:
         try:
             req = requests.get(image_url)
-            break()
+            break
         except:
             print("Error fetching " + image_name + ": Sleeping for an hour")
             time.sleep(360)
