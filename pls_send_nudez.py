@@ -67,8 +67,8 @@ def get_image(image_name):
             req = requests.get(image_url)
             break
         except:
-            print("Error fetching " + image_name + ": Sleeping for an hour")
-            time.sleep(3600)
+            print("Error fetching " + image_name + ": Sleeping...")
+            time.sleep(random.randint(600, 3600))
 
     image_data = req.content
     if 'd835884373f4d6c8f24742ceabe74946' == hashlib.md5(image_data).hexdigest() or sys.getsizeof(image_data) < IMAGE_SIZE_MIN:
